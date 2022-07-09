@@ -8,7 +8,7 @@ const apiErrorHandler = require('./error/apiErrorHandler');
 
 //Establish the Routes and Static Content
 //If in DEV, publish the HTML content in the Public Folder for testing
-if (process.env.MODE == 'DEV') app.use('/', express.static(path.join(__dirname, '/public')))
+ app.use('/', express.static(path.join(__dirname, '/public')))
 
 //Register the routes
 app.use('/notifier', require('./routes/notifier'));
