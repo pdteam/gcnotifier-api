@@ -1,9 +1,7 @@
 function handle(promise, timeout) {
 
   //Establish a timeout period  
-  let timer;
-  if (!timeout) timeout = process.env.TIMEOUT; //Set a default timeout period
-  if (!timeout) timeout = 30000; //If env is not set, the default to 30 seconds
+  let timer = process.env.TIMEOUT || 30000;
 
   return Promise.race([
     //return the promise we are after
